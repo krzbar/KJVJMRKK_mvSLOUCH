@@ -12,7 +12,8 @@
 
 library(mvSLOUCH)
 
-numtips<-30
+## set.seed(12345) ## if the user wishes to test for a particular random seed
+numtips<-30 ## number of tips of the phylogenetic tree, increasing will of course increas the running time
 phyltree<-ape::rtree(numtips)
       
 phyltree<-phyltree_paths(phyltree) ## a technical step to speed up calculations, this enhaces the phylogeny with information that will be later used by mvSLOUCH
