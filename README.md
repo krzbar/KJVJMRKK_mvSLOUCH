@@ -6,3 +6,9 @@ The exact output can depend on the random seed. However, in the script we have t
 the random seeds that were used to generate the results are saved, included and can be read in.
 
 The code is divided into several directories with scripts, random seeds and result files.
+
+1) LikelihoodTesting
+    Directory contains scripts that demonstrate aspects of the likelihood calculations by mvSLOUCH.
+    1.1) test_rotation_invariance_mvSLOUCH.R 
+          script demonstrates that mvSLOUCH's likelihood calculations are rotation invariant.
+    
