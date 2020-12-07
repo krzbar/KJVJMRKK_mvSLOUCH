@@ -9,6 +9,7 @@ The code is divided into several directories with scripts, random seeds and resu
 
 1) LikelihoodTesting
     Directory contains scripts that demonstrate aspects of the likelihood calculations by mvSLOUCH.
+    
     1.1) test_rotation_invariance_mvSLOUCH.R 
           script demonstrates that mvSLOUCH's likelihood calculations are rotation invariant.
     
