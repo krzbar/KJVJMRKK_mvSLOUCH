@@ -19,6 +19,5 @@ The code is divided into several directories with scripts, random seeds and resu
     Directory contains files connected the the Carnivrons' vignette in mvSLOUCH
     
     2.1) Carnivora_mvSLOUCH_objects.RData    
-           Full output of the running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the  
-           vignette.
+           Full output of the running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the            vignette.
     
