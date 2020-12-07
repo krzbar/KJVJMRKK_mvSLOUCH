@@ -11,7 +11,6 @@
 ## This R script demonstrates that the likelihood calculations of mvSLOUCH are rotation invariant.
 
 library(mvSLOUCH)
-set.seed(12345)
 
 numtips<-30
 phyltree<-ape::rtree(numtips)
