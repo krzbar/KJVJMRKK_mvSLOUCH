@@ -11,15 +11,14 @@ The code is divided into several directories with scripts, random seeds and resu
 
     Directory contains scripts that demonstrate aspects of the likelihood calculations by mvSLOUCH.
     
-    1.1) test_rotation_invariance_mvSLOUCH.R 
-    
+    1.1) test_rotation_invariance_mvSLOUCH.R     
           script demonstrates that mvSLOUCH's likelihood calculations are rotation invariant.
         
 2) Carnivorans
 
     Directory contains files connected the the Carnivrons' vignette in mvSLOUCH
     
-    2.1) Carnivora_mvSLOUCH_objects.RData
-    
-            Full output of the running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the vignette
+    2.1) Carnivora_mvSLOUCH_objects.RData    
+           Full output of the running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the  
+           vignette.
     
