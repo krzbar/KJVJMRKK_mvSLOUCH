@@ -1,7 +1,10 @@
 In this directory one may find all the files generated (including the random seeds) in the simulation study and also R scripts used for this purpose.
 
 
-To replicate the results of the simulation study one needs to run source("tosource_simulationreestimation.R").
+To replicate the results of the simulation study one needs to first in each of the folders "0*_ModelSelection" 
+
+
+run source("tosource_simulationreestimation.R").
 In order to replicate the results the logical variable b_use_random_seed_from_manuscript has to be set to TRUE. If not, then the simulations will start from the provided by R .Random.seed. If furthermore b_should_random_seed_be_saved is TRUE then the random number generator seeds will be saved (hence a combination of FALSE and TRUE respectively will lead to overwriting whatever random number generator seeds are stored.
 The integer variable numcores is the number of CPU cores to be used in the parallalization and runnum is a (character) suffix that will be added to file and directory names if one wants to have multiple runs with distinct names that do not overwrite each other.
 
