@@ -20,5 +20,5 @@ The code is divided into several directories with scripts, random seeds and resu
     
 3) SimulationStudy
 
-    Directory contains all the results of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones one simulation study, and scripts to generate graphs, and model comparison summary.
+    Directory contains all the output of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs, and model comparison summary.
     
