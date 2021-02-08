@@ -18,7 +18,7 @@ c_fileprefix<-"SimulationReestimation_SetupID" ## how the file names with the si
 c_file_suffix<-"" ## suffix of directories and files, can be used for distinguishing between numerous reruns, corresponds to runnum in tosource_simulationreestimation.R
 c_boxplotdir<-"./BoxPlots" ## directry into which to save the boxplots
 c_file_modelcomparison<-paste0("modelcomparisons",c_file_suffix,".txt") ## text file where the model comparisons (by AICc) will be saved
-vN<-c(32,64,128,256,512,1024) ## number of tips
+vN<-c(32,64,128,256,512,1024,2048) ## number of tips
 v_setups<-c(1,2,3,4,5) ## setup id, the preceding 0 will be added later on in the scripts
 ## end of user controlled variables
 ## =====================================================================================================
