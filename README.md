@@ -17,14 +17,19 @@ The code is divided into several directories with scripts, random seeds and resu
     
     2.1) Carnivora_mvSLOUCH_objects_Full.RData
         Full output of  running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the            vignette.
+        
     2.2) Carnivora_mvSLOUCH_objects.RData
         Reduced objects from Carnivora_mvSLOUCH_objects_Full.RData that are included with mvSLOUCH's vignette.
+        
     2.3) Carnivora_mvSLOUCH_objects_remove_script.R
         R script to reduce Carnivora_mvSLOUCH_objects_Full.RData to Carnivora_mvSLOUCH_objects.RData .
+        
     2.4) mvSLOUCH_Carnivorans.Rmd
         The vignette itself.
+        
     2.5) refs_mvSLOUCH.bib 
         Bib file for the vignette.
+        
     2.6) ScaledTree.png, ScaledTree2.png, ScaledTree3.png, ScaledTree4.png
         Plots of phylogenetic trees for vignette.
 
