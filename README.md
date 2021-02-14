@@ -15,9 +15,19 @@ The code is divided into several directories with scripts, random seeds and resu
 
     Directory contains files connected the the Carnivrons' vignette in mvSLOUCH
     
-    2.1) Carnivora_mvSLOUCH_objects.RData    
-           Full output of the running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the            vignette.
-    
+    2.1) Carnivora_mvSLOUCH_objects_Full.RData
+        Full output of  running the R code in the vignette. With mvSLOUCH is a very bare-minimum subset of this file that allows for the creation of the            vignette.
+    2.2) Carnivora_mvSLOUCH_objects.RData
+        Reduced objects from Carnivora_mvSLOUCH_objects_Full.RData that are included with mvSLOUCH's vignette.
+    2.3) Carnivora_mvSLOUCH_objects_remove_script.R
+        R script to reduce Carnivora_mvSLOUCH_objects_Full.RData to Carnivora_mvSLOUCH_objects.RData .
+    2.4) mvSLOUCH_Carnivorans.Rmd
+        The vignette itself.
+    2.5) refs_mvSLOUCH.bib 
+        Bib file for the vignette.
+    2.6) ScaledTree.png, ScaledTree2.png, ScaledTree3.png, ScaledTree4.png
+        Plots of phylogenetic trees for vignette.
+
 3) SimulationStudy
 
     Directory contains all the output of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs, and model comparison summary.
