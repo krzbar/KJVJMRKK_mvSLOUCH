@@ -1,3 +1,15 @@
+## This file accompanies the manuscript: 
+## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje " Fast mvSLOUCH: Model comparison for multivariate Ornstein-Uhlenbeck-based models of trait evolution on large phylogenies"
+
+## This software comes AS IS in the hope that it will be useful WITHOUT ANY WARRANTY, 
+## NOT even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+## Please understand that there may still be bugs and errors. Use it at your own risk. 
+## We take no responsibility for any errors or omissions in this code or for any misfortune 
+## that may befall you or others as a result of its use. Please send comments and report 
+## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
+
+## This R script reduces the objects created from the code in mvSLOUCH's vignetter to those that are included with the vignette. The reduction is done in order to comply with CRAN's package size constraints.
+
 load("Carnivora_mvSLOUCH_objects_Full.RData") ## File with all estimation results by mvSLOUCH
 BT$paramatric.bootstrap.estimation.replicates<-NULL
 FinalOUf1$FinalFound$ParamSummary<-NULL
