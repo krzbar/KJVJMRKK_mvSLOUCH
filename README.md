@@ -47,7 +47,7 @@ The code is divided into several directories with scripts, random seeds and resu
         feeding style: B=browsers, G=grazers, M=mixed feeders) based on Pérez–Barbería and Gordon (2001). Phylogeny pruned from Hedges et al. (2015). 
         Taxonomic mismatches among these sources were resolved based on Wilson and Reeder (2005).        
         Hedges, S. B., J. Marin, M. Suleski, M. Paymer, and S. Kumar. 2015. Tree of life reveals clock-like speciation and diversification. 
-        Molecular Biology and Evolution 32:835-845.
+        Molecular Biology and Evolution 32:835-845.        
         Mendoza, M., C. M. Janis, and P. Palmqvist. 2002. Characterizing complex craniodental patterns related to feeding behaviour in ungulates: 
         a multivariate approach. Journal of Zoology 258:223-246.
         Pérez–Barbería, F. J., and I. J. Gordon. 2001. Relationships between oral morphology and feeding style in the Ungulata: a phylogenetically
