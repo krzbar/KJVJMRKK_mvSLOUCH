@@ -42,7 +42,10 @@ The code is divided into several directories with scripts, random seeds and resu
     Directory contains files connected to the "Feeding styles and oral morphology in ungulates" analyses performed for the manuscript.
     
     4.1) Data.csv
-        The phenotypic data includes three continuous variables and one categorical variable. Continuous variables (MZW: muzzle width; HM3: unworn lower third molar crown height; WM3: unworn lower third molar crown width) from Mendoza et al. (2002), measured in cm. Categorical variable (FS, i.e. feeding style: B=browsers, G=grazers, M=mixed feeders) based on Pérez–Barbería and Gordon (2001). Phylogeny pruned from Hedges et al. (2015). Taxonomic mismatches among these sources were resolved based on Wilson and Reeder (2005).
+        The phenotypic data includes three continuous variables and one categorical variable. Continuous variables (MZW: muzzle width; HM3: unworn lower 
+        third molar crown height; WM3: unworn lower third molar crown width) from Mendoza et al. (2002), measured in cm. Categorical variable (FS, i.e. 
+        feeding style: B=browsers, G=grazers, M=mixed feeders) based on Pérez–Barbería and Gordon (2001). Phylogeny pruned from Hedges et al. (2015). 
+        Taxonomic mismatches among these sources were resolved based on Wilson and Reeder (2005).        
         Hedges, S. B., J. Marin, M. Suleski, M. Paymer, and S. Kumar. 2015. Tree of life reveals clock-like speciation and diversification. 
         Molecular Biology and Evolution 32:835-845.
         Mendoza, M., C. M. Janis, and P. Palmqvist. 2002. Characterizing complex craniodental patterns related to feeding behaviour in ungulates: 
