@@ -50,9 +50,11 @@ The code is divided into several directories with scripts, random seeds and resu
         Molecular Biology and Evolution 32:835-845.        
         Mendoza, M., C. M. Janis, and P. Palmqvist. 2002. Characterizing complex craniodental patterns related to feeding behaviour in ungulates: 
         a multivariate approach. Journal of Zoology 258:223-246
-        Pérez–Barbería, F. J., and I. J. Gordon. 2001. Relationships between oral morphology and feeding style in the Ungulata: a phylogenetically
+       
+      Pérez–Barbería, F. J., and I. J. Gordon. 2001. Relationships between oral morphology and feeding style in the Ungulata: a phylogenetically
         controlled evaluation. Proceedings of the Royal Society of London. Series B: Biological Sciences 268:1023-1032.
-        Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: A taxonomic and geographic reference. 
+       
+      Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: A taxonomic and geographic reference. 
         Johns Hopkins University Press, Baltimore, Maryland.         
     
     4.2) OUB.R, OUF.R, OUG.R
