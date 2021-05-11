@@ -64,7 +64,7 @@ The code is divided into several directories with scripts, random seeds and resu
         
 5) Ferula analyses
 
-In the models_ME directory there are input and output files from the mvSLOUCH analyzes of Ferula data with measurement error included, while in the models_no_ME directory the analyzes of data without measurement error. In each directory, one can find the following files:
+    In the models_ME directory there are input and output files from the mvSLOUCH analyzes of Ferula data with measurement error included, while in the models_no_ME                directory the analyzes of data without measurement error. In each directory, one can find the following files:
 
 - input files: Data_ME.csv (with mesurment error) or Data_no_ME.csv (without measurement error) and tree file in Newick format (Ferula_fruits_tree.txt); the trait names in data files are abbreviated as follows: ration_canals – the proportion of oil ducts covering the space between median and lateral ribs, mean_gr_peri – periderm thickness, wings_area – wing area, thick_wings – wing thickness and seed_mass – seed mass,
 - the results for 8 analyzed models (see Fig. 2 in the main text), each in separate directory named model1, model2 and so on,
