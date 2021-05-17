@@ -70,6 +70,9 @@ The code is divided into several directories with scripts, random seeds and resu
 - the results for 8 analyzed models (see Fig. 2 in the main text), each in separate directory named model1, model2 and so on,
 - each model directory comprises the following files: two R scripts (for analyzes with diagonal and with upper triangular matrix Σyy; each model was run 1000 times), two csv files included information such as number of repetition (i), seed for preliminary analyzes generating starting point (seed_start_point), seed for the main analyses (seed) and AIC, AICc, SIC, BIC, R2 and loglik for each model run (these csv files are sorted according to AICc values), two directories containing results for 1000 analyzes, and two files extracted from these directories showing parameter estimation for the best models (with UpperTri and Diagonal matrix Σyy) 
 
+6) test_rot_mvSLOUCH.R
+
+    This R script demonstrates that the likelihood calculations of mvSLOUCH are rotation invariant.
 
 
     
