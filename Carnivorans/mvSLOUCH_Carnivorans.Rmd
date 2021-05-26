@@ -93,9 +93,8 @@ library(mvSLOUCH)
 
 As a phylogenetic comparative analysis with mvSLOUCH can run a long time, we first load required fragments of the
 precalculated objects. The unreduced objects are the results of the estimation procedures run here with the set random seed.
-We preload them so that building the vignette it does not take over a day and we store with mvSLOUCH only the necessary
-parts as the full objects would take up too much space. The complete objects can be found in the 
-[KJVJMRKK_mvSLOUCH GitHub repository](https://github.com/krzbar/KJVJMRKK_mvSLOUCH).
+We preload them so that building the vignette does not take over a day and we store within mvSLOUCH only the necessary
+parts as the full objects would take up too much space. 
 However, the readers are encouraged to run the presented code by themselves.
 ```{r}
 load("./Carnivora_mvSLOUCH_objects.RData")
@@ -135,12 +134,13 @@ runners as they are for diggers. The mvSLOUCH package offers analytical tools fo
 1. relate limb morphologies  to locomotor types (e.g. runners vs diggers); and 
 2. test for trade-offs between force outputs and velocity transmissions in limb mechanics (i.e. strength vs speed).
 
-We will explore these ideas using a subset of the dataset collected in [@JSamJMeaSSak2013],
+We will explore these ideas using a subset of the dataset collected by @JSamJMeaSSak2013,
 available at the Dryad Data Repository dx.doi.org/10.5061/dryad.77tm4. We first download the data, remove fossil samples 
-(lacking locomotor ecology data, one, *Urocyon cinereoargenteus*, has to be removed separately as the contemporary and 
-fossil entry have the same species name), species with missing measurements (for radius length, see below) and 
+(lacking locomotor ecology data; *Urocyon cinereoargenteus* is removed separately 
+as the current and fossil samples have the same entry as species name in the data file), 
+species with missing measurements (for radius length, see below) and 
 *Lycalopex sp.* (as species identification is required for branch length assignation), 
-rename species according to @WJohetal2006 and @DWilDRee2005, and matching the tip 
+rename species according to @WJohetal2006 and @DWilDRee2005, and match the tip 
 labels in the phylogeny (spaces replaced by underscores), and finally keep only the columns that we need 
 (locomotor habits, humerus length, deltopectoral crest length and radius length of the forelimb; see below).
 
@@ -164,7 +164,7 @@ dat<-dfcarnivores_postcranial[,c("Ecology","HuL","HuPCL","RaL")]
 ```
 
 The subset consists of a categorization of locomotor habits (Ecology) and three variables associated with forelimb morphology, 
-measured in mm (HuL = humerus length; HuPCL = deltopectoral crest length; RaL = radius length):
+measured in mm (`HuL` = humerus length; `HuPCL` = deltopectoral crest length; `RaL` = radius length):
 
 ```{r}
 head(dat)
@@ -183,13 +183,15 @@ specified as explanatory variable in those models that allow continuous predicto
 [(fundamentally OUBM models; see  OUBM Section)](#section4_2).
 
 @JSamJMeaSSak2013 included $107$ extant carnivoran taxa in their dataset, but here we use a reduced subset of 
-$105$ species after removing those which phenotypic data were not complete, defined at the species level, 
+species after removing those which phenotypic data were not complete, defined at the species level, 
 or available in the phylogenetic tree. 
 The phylogeny is pruned from the mammalian calibrated tree presented by @SHedJMarMSulMPaySKum2015, 
 which we download from the supplementary material made available at the 
 Center for Biodiversity ( http://www.biodiversitycenter.org/ttol ). Then we rename species according 
 to @DWilDRee2005 and @WJohetal2006 for taxonomic matching, remove the tips not 
 present in our phenotypic data, and finally arrange the rows in our data matrix according to the order of the tips in the phylogeny.
+In this case the last step is not actually needed but in general such a reordering is recommended for users
+to make sure the data correspond to the appropriate tips of the phylogeny. 
 
 ```{r}
 phyltree_mammals<-ape::read.tree("http://www.biodiversitycenter.org/files/ttol/8.TTOL_mammals_unsmoothed.nwk")
@@ -203,10 +205,11 @@ Tree<-ape::di2multi(PrunedTree)
 dat<-dat[Tree$tip.label,]
 ```
 
-You will notice that the number of internal nodes $(90)$ is unexpectedly low given the number of tips $(105)$. 
+You will notice that the number of internal nodes (`r Tree$Nnode`) is unexpectedly low given the number of tips 
+(`r length(Tree$tip.label)`).
 This is because the tree includes polytomies. Polytomies are not a problem for mvSLOUCH as its design does not depend
 on the number of descendants. Including polytomies will not affect the values of the likelihood during optimization, and 
-in fact can result in more stabilize estimations than when using phylogenies with very short branches (close to zero). 
+in fact can result in more stable estimations than when using phylogenies with very short branches (close to zero). 
 Another practice that can lead to more stable estimations is using trees scaled to maximum tree height, as the smaller 
 numerical branch length values allow the estimator to find the maximum likelihood peak more easily. As currently loaded, 
 this tree is not scaled: 
@@ -293,11 +296,11 @@ reg.col[reg.col=="semifossorial"]<-"brown"
 ```
 
 ```{r eval=FALSE, echo=TRUE}
-plot(ScaledTree, cex = 0.3,  edge.color = reg.col, edge.width=3.5)
+plot(ScaledTree, cex = 1,  edge.color = reg.col, edge.width=3.5, type="fan", font=4)
 ```
 
 ```{r eval=TRUE, echo=FALSE, out.width = "100%", fig.pos="h"}
-knitr::include_graphics("./ScaledTree.png", auto_pdf=TRUE)
+knitr::include_graphics("./ScaledTree_fan.png", auto_pdf=TRUE)
 ```
 
 # Main models {#section4}
@@ -361,8 +364,13 @@ This matrix contains information about phylogenetic inertia, which is easier to 
 OU1BM$FinalFound$ParamSummary$phyl.halflife$halflives
 ```
 
-Under this model, it takes close to five times the tree height for the response variables to lose half of their ancestral influence.
-So, if we assume that humerus length evolves randomly, it takes a very long time for the response variables to track it. 
+#Under this model, it takes close to five times the tree height for the response variables to lose half of their ancestral influence.
+#So, if we assume that humerus length evolves randomly, it takes a very long time for the response variables to track it. 
+#This can be confirmed by another set of key parameters in this model, the optimal and evolutionary regressions:
+Under this model, it takes close to five times the tree height for the response variables to lose half of their ancestral influence. 
+Note that, unlike the $\mathbf{A}$ matrix, the half-life entries are numbered (`[,1]` and `[,2]`) rather than tied to specific 
+variables (`HuPCL` and `RaL`). This is because half-lives are reported in the eigenvector directions rather than in 
+trait space. So, if we assume that humerus length evolves randomly, it takes a very long time for the response variables to track it. 
 This can be confirmed by another set of key parameters in this model, the optimal and evolutionary regressions:
 
 ```{r}
@@ -370,8 +378,8 @@ OU1BM$FinalFound$ParamSummary$optimal.regression
 OU1BM$FinalFound$ParamSummary$evolutionary.regression
 ```
 
-The optimal regression describes the predicted association if the responses (HuPCL and RaL) could adapt instantaneously to 
-changes in the explanatory variable free of ancestral trait influences (HuL). The evolutionary regression shows the 
+The optimal regression describes the predicted association if the responses (`HuPCL` and `RaL`) could adapt instantaneously to 
+changes in the explanatory variable free of ancestral trait influences (`HuL`). The evolutionary regression shows the 
 observed relationship, after accounting for general phylogenetic effects. The two sets of coefficients are very different, 
 indicating that the observed association is far shallower than the theoretical expectation of instantaneous adaptation. 
 Consistent with the half-lives, this suggests that changes in the response variables towards a randomly evolving 
@@ -384,7 +392,7 @@ OU1BM$FinalFound$ParamsInModel$mPsi
 ```
 
 There is a single regime for the primary optimum, but if the habitats these carnivorans occupy have had any impact on the 
-evolution of their limbs, several regimes should be considered (one for each habitat type, analogous to ANCOVA). 
+evolution of their limbs, several niches should be considered (one for each habitat type, analogous to MANCOVA). 
 We can account for this habitat contribution by using the locomotor preferences as a selective regime (with the argument 
 `regimes` below; note that we are calling the `regimesFitch` object created earlier in the [Regime specification section](#section3)). 
 Note also that we are specifying the niche at the root of the tree as "generalist" (with the argument `root.regime` below) 
@@ -433,8 +441,8 @@ OUBMestim$FinalFound$ParamSummary$evolutionary.regression
 
 The difference between the two regressions is less extreme here than in the single regime specification (`OU1BM`), in particular regarding
 radius length.
-So, the response variables (especially radius length) are less influenced by evolving humerus length
-when locomotor types are accounted for. But what if humerus length does not evolve independently of the other two variables? 
+So, the response variables (especially radius length) are less influenced (having smaller, in magnitude, regression coefficients)
+by evolving humerus length when locomotor types are accounted for. But what if humerus length does not evolve independently of the other two variables? 
 Then using a BM process to model the evolution of humerus length would not be appropriate (as in `OU1BM` and `OUBMestim`), 
 requiring a different model that we describe next.
 
@@ -447,7 +455,7 @@ OU1OU <- mvSLOUCH::ouchModel(mvStree, mvData, predictors = c(3))
 ```
 
 We can easily verify that humerus length is now following an OU process by checking the rate of adaptation matrix 
-(note that, unlike the OUBM models, HuL is now part of the matrix):
+(note that, unlike the OUBM models, `HuL` is now part of the matrix):
 
 ```{r}
 OU1OU$FinalFound$ParamsInModel$A
@@ -484,14 +492,13 @@ OUBMestim$FinalFound$ParamsInModel$A
 ```
 
 having entry `[2,2]` orders of magnitude larger than the other entries and resulting in one extremely short half-life
-(essentially instantaneous adaptation) and one extremely long half-lie
+(essentially instantaneous adaptation) and one extremely long half-life
 
 ```{r}
 OUBMestim$FinalFound$ParamSummary$phyl.halflife$halflives
 ```
 
-Such situations cause numerical issues, when summarizing parameters calculating summary statistics or conditional
-distributions. 
+Such situations cause numerical issues when summarizing parameters, calculating summary statistics or conditional distributions.
 In fact, the value of the `R2_non_phylogenetic_conditional_on_predictors` could actually be negative. 
 This could be due to the fact that the non-phylogenetic conditional $\mathrm{R}^{2}$ is calculated under a completely different, 
 non-nested, model (compared to the model in which the parameters are estimated).
@@ -499,7 +506,7 @@ As the name of the field
 suggests, this statistic ignores the phylogenetic correlations. Hence, since the parameters were estimated
 with the phylogenetic correlations, it could happen that a model with fewer degrees of freedom (only the grand
 mean) had a lower residual sum of squares (but it is non-nested as it ignores the phylogenetic correlations). 
-The reason why we calculate the conditional $\mathrm{R}^{2}$ without the phylogeny is because the linear
+The reason why we calculate the conditional $\mathrm{R}^{2}$ without the phylogeny is that the linear
 likelihood evaluation algorithm cannot be carried over to conditional distributions. However,
 the hope is that if the model fit is good, then the non-phylogenetic conditional $R^{2}$ will
 be high, and tell us something about the explained variance. 
@@ -576,7 +583,7 @@ However, the OU models themselves can vary considerably in complexity depending 
 mvSLOUCH offers a variety of parameter specifications that allows adjusting the level of complexity of the models as well 
 as contrasting different evolutionary scenarios on the data. The main two arguments involved in this parameter modification are 
 `Atype` and `Syytype` (see below for an example), which allow setting the type of $\mathbf{A}$ and $\mathbf{\Sigma}_{yy}$ matrices, 
-respectively. mvSLOUCH sets up $\mathbf{\Sigma}_{yy}$ as `"UpperTri"' by default (i.e. upper triangular), which can be easily 
+respectively. mvSLOUCH sets up $\mathbf{\Sigma}_{yy}$ as `"UpperTri"` by default (i.e. upper triangular), which can be easily 
 verified by checking this matrix in any of the OUOU models fitted above (this one in particular corresponds to the 
 OUOU model with the locomotor regime):
 
@@ -590,8 +597,7 @@ $\mathbf{A}$ matrix, mvSLOUCH sets it up as `"Invertible"` by default, with othe
 `"DecomposablePositive"`, `"DecomposableNegative"`, `"DecomposableReal"`, `"TwoByTwo"`, and `"Any"`. 
 The default setting (i.e. `“Invertible”`) is very general and makes the fewest biological assumptions on the traits, 
 but can often lead the estimation procedure to getting stuck at a local likelihood peak. 
-Let us try a model with the matrices  
-$\mathbf{\Sigma}_{yy}$ as lower triangular, and $\mathbf{A}$ as diagonal: 
+Let us try a model with the matrices $\mathbf{\Sigma}_{yy}$ as lower triangular, and $\mathbf{A}$ as diagonal: 
 
 ```{r eval=FALSE, echo=TRUE}
 OUBMestim.mod <- mvSLOUCH::mvslouchModel(mvStree, mvData, kY = 2, predictors = c(3), regimes = regimesFitch$branch_regimes, root.regime = "generalist", Syytype = "LowerTri", Atype = "Diagonal")
@@ -649,7 +655,7 @@ Under the `"basic"` setting of `model.setups`, the diagonal elements of $\mathbf
 The argument `model.setups` also allows modifying these signs by providing customized lists (see manual for details), 
 but this should be done with caution as some model specifications rely on particular sign settings. Therefore, the 
 user should make sure that customized sign settings do not conflict other model specifications (e.g. `Atype` and `Syytype` settings). 
-The model setting of this preferred candidate behaves much better than the OUOU model under a global regime we fitted earlier 
+The model setting of this preferred candidate behaves better than the OUOU model under a global regime we fitted earlier 
 [(`OU1OU`; see section OUOU)](#section4_3). The eigenvalues from the $\mathbf{A}$ matrix are all positive for the current model:
 
 ```{r}
@@ -663,13 +669,14 @@ OU1$BestModel$key.properties$R2_non_phylogenetic_conditional_on_predictors
 ```
 
 The value of $\mathrm{R}^{2}$ is similar to that of the earlier model (`OU1OU`) but the wrapper function has shown us that a 
-different parameterization results in a much simpler structure, $\mathbf{A}$ is diagonal
+different parameterization results in
+a simpler structure with a diagonal $\mathbf{A}$
 
 ```{r}
 OU1$BestModel$BestModel$ParamsInModel$A
 ```
 
-unlike, the `OU1OU` case. However, from our simulations studies there seems to be some bias towards models with
+unlike the `OU1OU` case. However, from our simulations studies there seems to be some bias towards models with
 diagonal $\mathbf{A}$ so a careful consideration of competing models has to be done. 
 A comprehensive output for this improved model can be found in the  `BestModel` field of the output list:
 
@@ -761,7 +768,7 @@ OUf$BestModel$BestModel$ParamSummary$aic.c
 ```
 
 This newer model does also better than the top candidate of the wrapper function under a global regime 
-(AICc = $-272.2136$), although the difference of values in these two comparisons is considerable: 
+(AICc = `r OU1$BestModel$aic.c`), although the difference of values in these two comparisons is considerable: 
 
 ```{r}
 OUOUestim$FinalFound$ParamSummary$aic.c-OUf$BestModel$BestModel$ParamSummary$aic.c
@@ -776,8 +783,10 @@ for ranking support for candidate models based on such differences ($\Delta$AICc
 3. $>10$: Essentially no similarity
 
 Based on these rules of thumb, there is little empirical support for the top model of the global regime comparison 
-($\Delta$AICc $= 7.726385$), and essentially no support for the OUOU accounting for locomotor types under default settings 
-($\Delta$AICc $= 241.6319$), when compared with the preferred candidate of the new comparison (`OUf$BestModel`). 
+($\Delta$AICc = `r OU1$BestModel$BestModel$ParamSummary$aic.c-OUf$BestModel$BestModel$ParamSummary$aic.c`), 
+and essentially no support for the OUOU accounting for locomotor types under default settings 
+($\Delta$AICc = `r OUOUestim$FinalFound$ParamSummary$aic.c-OUf$BestModel$BestModel$ParamSummary$aic.c`),
+when compared with the preferred candidate of the new comparison (`OUf$BestModel`). 
 These results, besides highlighting the advantages of a thorough model comparison 
 (facilitated by the wrapper function of mvSLOUCH), suggest that locomotor preferences work effectively as a 
 selective regime for the limb attributes considered in this example.
@@ -823,11 +832,11 @@ climb.col[climb.col=="semiaquatic"] <- "blue"
 climb.col[climb.col=="semifossorial"] <- "brown"
 ```
 ```{r eval=FALSE, echo=TRUE}
-plot(ScaledTree, cex = 0.3, edge.color = climb.col, edge.width=3.5)
+plot(ScaledTree, cex = 1,  edge.color = climb.col, edge.width=3.5, type="fan", font=4)
 ```
 
 ```{r eval=TRUE, echo=FALSE, out.width = "100%", fig.pos="h"}
-knitr::include_graphics("./ScaledTree2.png", auto_pdf=TRUE)
+knitr::include_graphics("./ScaledTree2_fan.png", auto_pdf=TRUE)
 ```
 
 Let us conduct a model comparison under this regime specification:
@@ -843,7 +852,9 @@ OUc$BestModel$model
 ```
 
 This consolidates the properties of this parameterization for describing the data. The best model of this comparison 
-does better than the global regime (AICc = $-272.2136$), but not as well as the full regime specification (AICc = $-283.5499$):
+does better than the global regime (AICc = `r OU1$BestModel$aic.c`),
+but not as well as the full regime specification (AICc = `r OUf$BestModel$BestModel$ParamSummary$aic.c`):
+
 
 ```{r}
 OUc$BestModel$BestModel$ParamSummary$aic.c
@@ -869,11 +880,11 @@ strok.col[strok.col=="arboreal"]<-"green"
 strok.col[strok.col=="scansorial"]<-"orange"
 ```
 ```{r eval=FALSE, echo=TRUE}
-plot(ScaledTree, cex = 0.3, edge.color = strok.col, edge.width=3.5)
+plot(ScaledTree, cex = 1,  edge.color = strok.col, edge.width=3.5, type="fan", font=4)
 ```
 
 ```{r eval=TRUE, echo=FALSE, out.width = "100%", fig.pos="h"}
-knitr::include_graphics("./ScaledTree3.png", auto_pdf=TRUE)
+knitr::include_graphics("./ScaledTree3_fan.png", auto_pdf=TRUE)
 ```
 
 The model comparison under this new lumped regime specification: 
@@ -889,8 +900,9 @@ describing the data:
 OUs$BestModel$model
 ```
 
-This model does better than the alternative lumped strategy (AICc = $-278.0746$), but only extremely marginally better than the 
-full regime specification (AICc = $-283.5499$): 
+This model does better than the alternative lumped strategy (AICc = 
+`r OUc$BestModel$BestModel$ParamSummary$aic.c`), but only extremely marginally better than the 
+full regime specification (AICc = `r OUf$BestModel$BestModel$ParamSummary$aic.c`): 
 
 ```{r}
 OUs$BestModel$BestModel$ParamSummary$aic.c
@@ -925,11 +937,11 @@ red.col[red.col=="cursorial"]<-"red"
 red.col[red.col=="stroker"]<-"blue"
 ```
 ```{r eval=FALSE, echo=TRUE}
-plot(ScaledTree, cex = 0.3, edge.color = red.col, edge.width=3.5)
+plot(ScaledTree, cex = 1,  edge.color = red.col, edge.width=3.5, type="fan", font=4)
 ```
 
 ```{r eval=TRUE, echo=FALSE, out.width = "100%", fig.pos="h"}
-knitr::include_graphics("./ScaledTree4.png", auto_pdf=TRUE)
+knitr::include_graphics("./ScaledTree4_fan.png", auto_pdf=TRUE)
 ```
 
 Model comparison for this reduced regime specification:
@@ -944,7 +956,10 @@ The data under the reduced regime is also well explained by the model type selec
 OUr$BestModel$model
 ```
 
-But it is not as well supported as the previous model (AICc = $-283.5876$) or as the full regime specification (AICc = $-283.5499$):
+But it is not as well supported as the previous model 
+(AICc = `r OUc$BestModel$BestModel$ParamSummary$aic.c`)
+or as the full regime specification 
+(AICc = `r OUf$BestModel$BestModel$ParamSummary$aic.c`):
 
 ```{r}
 OUr$BestModel$BestModel$ParamSummary$aic.c
@@ -1100,11 +1115,11 @@ FinalOUs2$FinalFound$ParamSummary$confidence.interval$regression.summary$mPsi.re
 
 This object lists the values of the primary optima (field `Estimated.Point`) as well as the lower (field `Lower.end`) and upper 
 (field `Upper.end`) bounds of the $95\%$ confidence interval. Nothing conclusive can be said about dectopectoral crest 
-(HuPCL) and humerus lengths (HuL), as the confidence intervals for the primary optima of the different niches overlap to some extent. 
-The same does not happen with radius length (RaL) though, where the confidence intervals reveal more distinguishable 
+(`HuPCL`) and humerus lengths (`HuL`), as the confidence intervals for the primary optima of the different niches overlap to some extent. 
+The same does not happen with radius length (`RaL`) though, where the confidence intervals reveal more distinguishable 
 differences among niches. To see this more clearly, let’s plot these estimates. First we will use the above object 
 (listing the primary optimum estimates with confidence intervals) to create a data frame (DFs) indicating the locomotor habits 
-(Ecology) as a factor, and the radius length primary optimum (RaL) with the lower (lower) and upper (upper) bounds of the confidence intervals:
+(Ecology) as a factor, and the radius length primary optimum (`RaL`) with the lower (lower) and upper (upper) bounds of the confidence intervals:
 
 ```{r}
 DFs<-data.frame(
@@ -1160,8 +1175,8 @@ FinalOUs2$FinalFound$ParamSummary$trait.regression
 FinalOUs2$FinalFound$ParamSummary$conditional.corr.matrix
 ```
 
-Note that the association with the scaling factor (HuL) remains positive, but now the association of the responses 
-(HuPCL and RaL) is negative. This is, relative dectopectoral crest and humerus lengths are inversely associated, 
+Note that the association with the scaling factor (`HuL`) remains positive, but now the association of the responses 
+(`HuPCL` and `RaL`) is negative. This is, relative dectopectoral crest and humerus lengths are inversely associated, 
 consistent with the trade-off hypothesis. We can assess the strength of this pattern with confidence intervals, 
 but these are trickier to obtain for the above parameters than it was for the primary optimum. mvSLOUCH offers an alternative way 
 of estimating confidence intervals for these and many other parameters, as presented in the next section.
@@ -1241,7 +1256,7 @@ BTL.CorrMat
 BTU.CorrMat
 ```
 
-The estimates confirm the evolutionary regression results, with positive correlation coefficients). These results 
+The estimates confirm the evolutionary regression results, with positive correlation coefficients. These results 
 point towards a significant positive association among morphological variables, consistent with the absolute effects 
 due to scaling discussed earlier. The trade-off can be addressed by studying the conditional regression coefficients:
 
@@ -1267,7 +1282,7 @@ BTL.TrtReg
 BTU.TrtReg
 ```
 
-The negative association of the responses (HuPCL and RaL) cannot be considered significant as the confidence intervals include a 
+The negative association of the responses (`HuPCL` and `RaL`) cannot be considered significant as the confidence intervals include a 
 large range of positive values. Let us see if the conditional correlation matrix confirms this result:
 
 ```{r}
