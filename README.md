@@ -55,12 +55,15 @@ The code is divided into several directories with scripts, random seeds and resu
       Wilson, D. E., and D. M. Reeder. 2005. Mammal species of the world: A taxonomic and geographic reference. 
         Johns Hopkins University Press, Baltimore, Maryland.         
     
-    4.2) OUB.R, OUF.R, OUG.R
-        R scripts for the analyses performed in the manuscript. Different files correspond to different regime setups of the feeding style variable.
-        
-    4.3) Tree.tre 
+    4.2) Tree.tre 
         Ungulates' phylogeny, extracted from the mammalian phylogeny of         
         Hedges, S. B., J. Marin, M. Suleski, M. Paymer, and S. Kumar. 2015. Tree of life reveals clock–like speciation and diversification. Mol. Biol. Evol. 32:835–845.
+        
+    4.3) OUB.R, OUF.R, OUG.R
+        R scripts for the analyses performed in the manuscript. Different files correspond to different regime setups of the feeding style variable.
+        
+    4.4) OU1.txt, OUB.txt, OUF.txt, OUG.txt
+        Outputs of the model comparison conducted under the R scripts presented above (4.3). Different files correspond to different regime setups of the feeding style variable.
         
 5) Ferula analyses
 
