@@ -94,21 +94,6 @@ sort(OUmAIC)
 capture.output(estimResults,file = "OUm.txt")
 
 
-# OU1
-OU1Results<-estimate.evolutionary.model(mvStree,mvData,regimes = NULL,
-                                        repeats=5,model.setups=model_setups,
-                                        predictors=c(3),kY=2,doPrint=TRUE,
-                                        pESS=NULL,maxiter=c(10,50,100))
-
-# Sort models according to AICc
-OU1AIC<-rep(NA,length(OU1Results$testedModels))
-for (i in 1:length(OU1AIC)) {
-  OU1AIC[i]<-OU1Results$testedModels[[i]]$aic.c
-}
-sort(OU1AIC)
-
-# Save output to file
-capture.output(OU1Results,file = "OU1.txt")
 
 
 
