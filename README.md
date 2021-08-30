@@ -35,7 +35,7 @@ The code is divided into several directories with scripts, random seeds and resu
 
 3) SimulationStudy
 
-    Directory contains all the output of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs, and model comparison summary.
+    Directory contains all the output of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs, and model comparison summary. This study was done using version 2.6.2 of mvSLOUCH. If one reruns using mvSLOUCH >= 2.7, then one will obtain different (corrected) values of R2 and an additional R2 version. 
     
 4) Ungulates
 
