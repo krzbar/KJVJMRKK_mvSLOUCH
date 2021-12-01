@@ -26,7 +26,7 @@ if (vsetupstorun[[lsetup$id]]){
 	    v_iter<-lsetup$simulsetup$iter[[which(names(lsetup$simulsetup$iter)==paste0("size_",N))]]
 	    
 	    if (v_iter[1]>0){
-		crandomseed_filename<-paste0(setuprun_directory,"RandomSeed_SetupID_",lsetup$id,"_N_",N,"_",runnum,".RData")
+		crandomseed_filename<-paste0(setuprun_directory,"RandomSeed_SetupID_",lsetup$id,"_N_",N,runnum,".RData")
 		rexp(1)
 		if(b_use_random_seed_from_manuscript){##setup the random number generator if replicating results
 		    b_randomseed_file_exists<-FALSE
@@ -150,7 +150,7 @@ if (vsetupstorun[[lsetup$id]]){
 		mTrueChosen<-apply((t(sapply(lres,function(lrun){lrun$lextracted_estim_summary$TrueChosen},simplify=TRUE))),c(1,2),as.integer)
 		vTrueChosenFrac<-apply(mTrueChosen,2,sum)/nrow(mTrueChosen)
 	    
-		save_file<-paste0(setuprun_directory,"SimulationReestimation_SetupID_",lsetup$id,"_N_",N,"_",runnum,".RData")
+		save_file<-paste0(setuprun_directory,"SimulationReestimation_SetupID_",lsetup$id,"_N_",N,runnum,".RData")
 		save(lres,mTrueChosen,vTrueChosenFrac,file=save_file)
 	    }
 	    NA
