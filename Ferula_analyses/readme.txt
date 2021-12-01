@@ -5,3 +5,5 @@ In the models_ME directory there are input and output files from the mvSLOUCH an
 - each model directory comprises the following files: two R scripts (for analyzes with diagonal and with upper triangular matrix Σyy; each model was run 1000 times), two csv files included information such as number of repetition (i), seed for preliminary analyzes generating starting point (seed_start_point), seed for the main analyses (seed) and AIC, AICc, SIC, BIC, R2 and loglik for each model run (these csv files are sorted according to AICc values), two directories containing results for 1000 analyzes, and two files extracted from these directories showing parameter estimation for the best models (with UpperTri and Diagonal matrix Σyy)
 
 In addition, in the boot directory, there are R scripts, input data and output from bootstrap analyzes of two best models (4 and 7).  
+
+In the simulation_study directory we make available the R scripts, random seeds and results of the Ferula based simulation reestimation study.
