@@ -85,7 +85,7 @@ aiccARD<-aicc(aicARD,sum(upper.tri(mtreeARD$Q))*2,length(PolyTree$tip.label))
 # Likelihood ratio test (ER vs SYM)
 LR1<-2*(mtreeSYM$logL-mtreeER$logL)                                        # Likelihood ratio
 p_value1=1-pchisq(LR1,df=attr(aiccSYM,"df")-attr(aiccER,"df"))             # Significance
-# Likelihood ratio test (ARD vs SYM)
+# Likelihood ratio test (SYM vs ARD)
 LR2<-2*(mtreeARD$logL-mtreeSYM$logL)                                       # Likelihood ratio
 p_value2=1-pchisq(LR2,df=attr(aiccARD,"df")-attr(aiccSYM,"df"))            # Significance
 
@@ -119,7 +119,8 @@ XX$ace
 
 # Modify MP object based on SCM
 SCM.reg<-regimesFitch$branch_regimes
-SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,159)]<-"M"
+SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,154,155,159)]<-"M"
+SCM.reg[30]<-"G"
 # Confirm
 SCM.col<-SCM.reg
 SCM.col[SCM.col=="B"]<-"green"
@@ -195,7 +196,7 @@ capture.output(OU1Results,file = "OU1.txt")
 ### BT ###
 ##########
 
-OUOUfinal<-estimResults$testedModels[[32]]$result
+OUOUfinal<-estimResults$testedModels[[11]]$result
 
 BT<-parametric.bootstrap(estimated.model=OUOUfinal,phyltree=mvStree,
                          values.to.bootstrap=c("evolutionary.regression","corr.matrix",
