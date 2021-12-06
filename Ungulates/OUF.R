@@ -16,7 +16,7 @@ library(PCMBaseCpp)
 library(mvSLOUCH)
 library(phytools)
 
-RNGversion("4.0.2")
+RNGversion("4.1.1")
 set.seed(5, kind = "Mersenne-Twister", normal.kind = "Inversion")
 
 
