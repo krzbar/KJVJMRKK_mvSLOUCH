@@ -15,7 +15,7 @@ library(geiger)
 library(PCMBaseCpp)
 library(mvSLOUCH)
 
-RNGversion("4.0.2")
+RNGversion("4.1.1")
 set.seed(5, kind = "Mersenne-Twister", normal.kind = "Inversion")
 
 
@@ -51,7 +51,8 @@ regimesFitch<-fitch.mvsl(PolyTree,regimes,root="B",deltran=TRUE)
 
 # Modify MP reconstruction based on SCM
 SCM.reg<-regimesFitch$branch_regimes
-SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,159)]<-"M"
+SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,154,155,159)]<-"M"
+SCM.reg[30]<-"G"
 # Clumping M & B
 SCM.reg[SCM.reg=="M"]<-"B"
 # Confirm
