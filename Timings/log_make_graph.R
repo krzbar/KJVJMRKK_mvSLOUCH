@@ -8,14 +8,18 @@
 ## that may befall you or others as a result of its use. Please send comments and report 
 ## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
 
+## User controlled variables ===========================================================================
 filename_suffix<-"" ## initial _ has to be here
 filename_prefix<-"mvSLOUCH_newold_timings"
 results_directory<-"./mvSLOUCH_timings/"
 tmp_directory<-paste0(results_directory,"tmp_res/")
-vN<-c(5,10,25,50,100,200,400)
+vN<-c(5,10,25,50,100,200,400) ## numbers of tips for plotting
+vcolours<-c("black","red","blue","green","orange","brown") ## these are for BM, OUOU, OUBM with different mvSLOUCH versions
+## end of user controlled variables
+## =====================================================================================================
+
 l_timings<-vector("list",length(vN))
 names(l_timings)<-paste0("n_",vN)
-vcolours<-c("black","red","blue","green","orange","brown") ## these are for BM, OUOU, OUBM with different mvSLOUCH versions
 
 for (n in vN){
     l_timings[[which(names(l_timings)==paste0("n_",n))]]<-vector("list",4)
