@@ -1,0 +1,28 @@
+$BTL
+                   ratio_canals_ln mean_gr_peri_ln_um Wings_area_ln_mm2
+ratio_canals_ln          1.0000000         -0.7567272         0.0000000
+mean_gr_peri_ln_um      -0.7567272          1.0000000         0.0000000
+Wings_area_ln_mm2        0.0000000          0.0000000         1.0000000
+thick_wings_ln_um        0.0000000          0.0000000        -0.7956841
+Seed_mass_ln_mg          0.0000000          0.0000000         0.0000000
+                   thick_wings_ln_um Seed_mass_ln_mg
+ratio_canals_ln            0.0000000               0
+mean_gr_peri_ln_um         0.0000000               0
+Wings_area_ln_mm2         -0.7956841               0
+thick_wings_ln_um          1.0000000               0
+Seed_mass_ln_mg            0.0000000               1
+
+$BTU
+                   ratio_canals_ln mean_gr_peri_ln_um Wings_area_ln_mm2
+ratio_canals_ln          1.0000000          0.6627211         0.0000000
+mean_gr_peri_ln_um       0.6627211          1.0000000         0.0000000
+Wings_area_ln_mm2        0.0000000          0.0000000         1.0000000
+thick_wings_ln_um        0.0000000          0.0000000         0.8125111
+Seed_mass_ln_mg          0.0000000          0.0000000         0.0000000
+                   thick_wings_ln_um Seed_mass_ln_mg
+ratio_canals_ln            0.0000000               0
+mean_gr_peri_ln_um         0.0000000               0
+Wings_area_ln_mm2          0.8125111               0
+thick_wings_ln_um          1.0000000               0
+Seed_mass_ln_mg            0.0000000               1
+
