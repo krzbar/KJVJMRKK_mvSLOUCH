@@ -13,8 +13,8 @@ filename_suffix<-"" ## initial _ has to be here
 filename_prefix<-"mvSLOUCH_newold_timings"
 results_directory<-"./mvSLOUCH_timings/"
 tmp_directory<-paste0(results_directory,"tmp_res/")
-vN<-c(5,10,25,50,100,200,400) ## numbers of tips for plotting
-vcolours<-c("black","red","blue","green","orange","brown") ## these are for BM, OUOU, OUBM with different mvSLOUCH versions
+vN<-c(5,10,25,50,100,200,400,500) ## numbers of tips for plotting
+vcolours<-c("black","red","blue","green","orange","brown") ## these are for BM, OUOU, OUBM with different mvSLOUCH versions, order as in legend
 ## end of user controlled variables
 ## =====================================================================================================
 
@@ -35,29 +35,29 @@ for(i in 1:6){
     vMedians<-rep(NA,length(vN))
     names(vMedians)<-paste0("n_",vN)
     for (n in vN){
-	len_bar<-0.025
+    len_bar<-0.025
         median_time<-median(log(l_timings[[which(names(l_timings)==paste0("n_",n))]]$mTimings[i,]),na.rm=TRUE)
         vMedians[which(names(vMedians)==paste0("n_",n))]<-median((l_timings[[which(names(l_timings)==paste0("n_",n))]]$mTimings[i,]),na.rm=TRUE)
-	interquant_time<-quantile(log(l_timings[[which(names(l_timings)==paste0("n_",n))]]$mTimings[i,]),na.rm=TRUE)[c(2,4)]
-	interquant_time[1]<-median_time-1.5*(median_time-interquant_time[1])
-	interquant_time[2]<-median_time+1.5*(interquant_time[2]-median_time)
+    interquant_time<-quantile(log(l_timings[[which(names(l_timings)==paste0("n_",n))]]$mTimings[i,]),na.rm=TRUE)[c(2,4)]
+    interquant_time[1]<-median_time-1.5*(median_time-interquant_time[1])
+    interquant_time[2]<-median_time+1.5*(interquant_time[2]-median_time)
         points(n,median_time,pch=19,col=vcolours[i])
     }
     sink("LineFitCoeffs.txt",append=TRUE)
     print(paste0("Setup ",i))
     if (i%%2==1){## we have old
-	res_quadlm<-lm(((vMedians))~vN+I(vN^2))
-	coeff_a<-res_quadlm$coefficients[3] #3  #ax^2+b+c [1]->c, [2]->b, [3]->a
+    res_quadlm<-lm(((vMedians))~vN+I(vN^2))
+    coeff_a<-res_quadlm$coefficients[3] #3  #ax^2+b+c [1]->c, [2]->b, [3]->a
         coeff_b<-res_quadlm$coefficients[2]
-	coeff_c<-res_quadlm$coefficients[1]
-	print(c(coeff_a,coeff_b,coeff_c))
-	v_predtime<-log((coeff_a*v_pred_n^2+coeff_b*v_pred_n+coeff_c))
+    coeff_c<-res_quadlm$coefficients[1]
+    print(c(coeff_a,coeff_b,coeff_c))
+    v_predtime<-log((coeff_a*v_pred_n^2+coeff_b*v_pred_n+coeff_c))
     }else{## we have new
         res_quadlm<-lm(((vMedians))~vN)
         coeff_b<-res_quadlm$coefficients[2]
-	coeff_c<-res_quadlm$coefficients[1]
-	v_predtime<-log((coeff_b*v_pred_n+coeff_c))
-	print(c(coeff_b,coeff_c))
+    coeff_c<-res_quadlm$coefficients[1]
+    v_predtime<-log((coeff_b*v_pred_n+coeff_c))
+    print(c(coeff_b,coeff_c))
     }
     print("=====================================================")
     sink()
