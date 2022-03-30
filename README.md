@@ -65,7 +65,11 @@ The code is divided into several directories with scripts, random seeds and resu
     4.4) OU1.txt, OUB.txt, OUF.txt, OUG.txt
         Outputs of the model comparison conducted under the R scripts presented above (4.3). Different files correspond to different regime setups of the feeding style variable.
         
-5) Ferula analyses
+5) Timings
+
+    A simulation study to compare the running times between the old (1.3.4) and new (2.7.3) versions of mvSLOUCH.
+
+6) Ferula analyses
 
     In the models_ME directory there are input and output files from the mvSLOUCH analyzes of Ferula data with measurement error included, while in the models_no_ME                directory the analyzes of data without measurement error. In each directory, one can find the following files:
 
