@@ -1,0 +1,112 @@
+n = 5
+Mean times 
+     BM_old      BM_new    OUOU_old    OUOU_new    OUBM_old    OUBM_new 
+ 0.01114184  1.08966874 46.16217581  4.36545132 75.39042486 15.99859919 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+5.131473e-05 1.192885e+00 1.385795e+00 1.001822e+00 2.160152e+01 2.690906e+00 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        1        0 
+
+=================================================== 
+n = 10
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+  0.01056541   0.51786311 111.22026442   4.23551675 219.57195107  16.88501067 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+1.605629e-05 5.004060e-03 9.970525e+00 9.226571e-01 2.228226e+02 3.952605e+00 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        1        0 
+
+=================================================== 
+n = 25
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+2.993695e-02 5.810327e-01 5.257358e+02 4.506831e+00 1.084348e+03 1.986086e+01 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+4.541767e-05 1.927705e-03 2.519621e+02 7.831602e-01 2.790977e+04 8.938791e+00 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        8        0 
+
+=================================================== 
+n = 50
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+   0.1117573    0.7288668 1977.1740931    5.3233402 4011.1345592   26.2144932 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+1.519948e-04 6.863120e-04 2.397176e+03 6.891942e-01 2.559280e+05 1.453890e+01 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        5        0 
+
+=================================================== 
+n = 100
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+5.993008e-01 1.062930e+00 7.879607e+03 8.206432e+00 1.484707e+04 4.125766e+01 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+1.771283e-03 2.622085e-03 1.528938e+04 1.921078e+00 5.948858e+06 5.995635e+01 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        4        0 
+
+=================================================== 
+n = 200
+Mean times 
+     BM_old      BM_new    OUOU_old    OUOU_new    OUBM_old    OUBM_new 
+    4.11088     1.78962 33571.34809    13.15804 65319.68848    74.69953 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+2.241939e-01 8.684240e-03 1.811602e+05 9.918550e+00 5.435649e+07 1.772896e+02 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        4        0 
+
+=================================================== 
+n = 400
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+2.091537e+03 3.198366e+00 1.603381e+05 2.409617e+01 2.588883e+05 1.450564e+02 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+6.467949e+06 6.601252e-02 5.369615e+07 1.746632e+01 4.474907e+09 1.243094e+03 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        0        0        3        0 
+
+=================================================== 
+n = 500
+Mean times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+1.039006e+04 3.810866e+00 2.705260e+05 2.975076e+01 3.999220e+05 1.822597e+02 
+
+Var times 
+      BM_old       BM_new     OUOU_old     OUOU_new     OUBM_old     OUBM_new 
+1.597065e+06 5.693302e-02 1.386092e+08 6.467673e+01 6.683324e+09 1.865972e+03 
+
+Number of failed estimations 
+  BM_old   BM_new OUOU_old OUOU_new OUBM_old OUBM_new 
+       0        0        2        0        5        0 
+
+=================================================== 
