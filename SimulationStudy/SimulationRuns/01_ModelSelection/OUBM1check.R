@@ -37,10 +37,10 @@ for (r in 1:length(vn)){
 	    }	    
 	}
 	if ((!is.null(BMAICc)) &&(!is.na(BMAICc)) && (!is.null(bestOUBM1AICc)) &&(!is.na(bestOUBM1AICc)) && (!is.na(bestOUBM1AICc)) && (bestOUBM1AICc<BMAICc)){
-	    if (lres[[i]]$mvsl_estim_res$testedModels[[j]]$result$MaxLikFound[1]!="Same as final found"){
-		valpha[i]<-lres[[i]]$mvsl_estim_res$testedModels[[j]]$result$MaxLikFound$ParamsInModel$A[1,1]
+	    if (lres[[i]]$mvsl_estim_res$testedModels[[jvalmvslouch]]$result$MaxLikFound[1]!="Same as final found"){
+		valpha[i]<-lres[[i]]$mvsl_estim_res$testedModels[[jvalmvslouch]]$result$MaxLikFound$ParamsInModel$A[1,1]
 	    }else{
-		valpha[i]<-lres[[i]]$mvsl_estim_res$testedModels[[j]]$result$FinalFound$ParamsInModel$A[1,1]
+		valpha[i]<-lres[[i]]$mvsl_estim_res$testedModels[[jvalmvslouch]]$result$FinalFound$ParamsInModel$A[1,1]
 	    }	    
 	}
     }
@@ -71,5 +71,15 @@ print("==================================================")
 print("% t_0.5 > 1")
 to_print<-""
 cutoffval<-1;for(i in 1:lvn){to_print<-paste0(to_print,100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),", ")}
+cat(paste0(to_print,"\n"))
+print("==================================================")
+print("% t_0.5 > 2")
+to_print<-""
+cutoffval<-2;for(i in 1:lvn){to_print<-paste0(to_print,100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),", ")}
+cat(paste0(to_print,"\n"))
+print("==================================================")
+print("% t_0.5 > 3")
+to_print<-""
+cutoffval<-3;for(i in 1:lvn){to_print<-paste0(to_print,100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),", ")}
 cat(paste0(to_print,"\n"))
 print("==================================================")
