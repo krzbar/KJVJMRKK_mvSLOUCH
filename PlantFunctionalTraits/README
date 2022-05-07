@@ -1,1 +1,18 @@
-Please write here an intro to the analysis
+Fast_mvSLOUCH_example.zip contains the script (Fast_mvSLOUCH_example.R), alongside the inputs (within the INPUTS folder) 
+and outputs for the large plant dataset analysed in the paper.
+
+1. After extraction of the zip folder from github, place the folder where you seek to perform analyses.
+
+2. Set the working directory to this folder - setwd()
+
+3. Open the Fast_mvSLOUCH_example.R script in R
+
+4. If you want to run everything again (it will take at least 2 weeks using 6 cores on a laptop), set
+runtype <- "novel.run"
+at the top of the code. This will overwrite any outputs already in the folder, only drawing data from
+the INPUTS folder. You may find it easier therefore, to delete or move all files and folders except for
+the INPUTS FOLDER and this script.
+
+5. If you wish to run the code without fitting the models, but by loading our model outputs as presented in the paper, set:
+runtype <- "load.previous.outputs"
+This will enable you to examine our outputs within R.
