@@ -18,9 +18,7 @@ the INPUTS FOLDER and this script.
 runtype <- "load.previous.outputs"
 This will enable you to examine our outputs within R.
 
-
 Rows with file / folder names are indicated with *
-
 
 
 * "Fast_mvSLOUCH_example.R" 
