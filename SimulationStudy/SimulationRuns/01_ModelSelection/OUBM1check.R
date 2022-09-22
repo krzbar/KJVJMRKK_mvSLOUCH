@@ -1,5 +1,5 @@
 ## This file accompanies the manuscript: 
-## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje " Rotation Invariance in non–Brownian motion Phylogenetic Comparative Methods: A comment on Adams and Collyer (2018)"
+## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Rotation Invariance in non–Brownian motion Phylogenetic Comparative Methods: A comment on Adams and Collyer (2018)"
 ## It generates the values of Tab. 3 and should be run in the directory
 ## KJVJMRKK_mvSLOUCH/SimulationStudy/SimulationRuns/01_ModelSelection/
 ## containg the SimulationReestimation_SetupID_01_N_*.RData files
