@@ -7,7 +7,7 @@
 ## Please understand that there may still be bugs and errors. Use it at your own risk. 
 ## We take no responsibility for any errors or omissions in this code or for any misfortune 
 ## that may befall you or others as a result of its use. Please send comments and report 
-## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
+## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch . 
 
 f_getres<-function(filename,simmodelist,b_returnbestmodels=FALSE){    
     load(filename)
