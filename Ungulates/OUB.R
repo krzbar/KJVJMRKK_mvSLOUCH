@@ -93,31 +93,3 @@ sort(OUmAIC)
 
 # Save output to file
 capture.output(estimResults,file = "OUm.txt")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
