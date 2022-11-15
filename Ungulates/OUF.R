@@ -48,9 +48,9 @@ PolyTree<-di2multi(ScaledTree)
 
 # Regime
 regimes<-dat$FS[order(match(row.names(dat),PolyTree$tip.label))]
+# Create regime backbone under the parsimony function of mvSLOUCH to ensure proper format
 regimesFitch<-fitch.mvsl(PolyTree,regimes,root="B",deltran=TRUE)
-
-# Parsimony
+# Visualize regime backbone
 reg.col<-regimesFitch$branch_regimes
 reg.col[reg.col=="B"]<-"green"
 reg.col[reg.col=="M"]<-"orange"
@@ -117,11 +117,13 @@ XX$ace
 
 
 
-# Modify MP object based on SCM
+# Modify regime backbone based on the SCM reconstruction
 SCM.reg<-regimesFitch$branch_regimes
+# Modifications for character state "M"
 SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,154,155,159)]<-"M"
+# Modifications for character state "G"
 SCM.reg[30]<-"G"
-# Confirm
+# Confirm modified object corresponds to SCM reconstruction
 SCM.col<-SCM.reg
 SCM.col[SCM.col=="B"]<-"green"
 SCM.col[SCM.col=="M"]<-"orange"
@@ -246,7 +248,6 @@ for(i in 1:nrow(OUOUfinal$FinalFound$ParamSummary$evolutionary.regression)){
   EmpL.EvoReg[i,]<-Emp.EvoReg[1]
   EmpU.EvoReg[i,]<-Emp.EvoReg[2]
 }
-
 
 
 

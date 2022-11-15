@@ -47,11 +47,14 @@ PolyTree<-di2multi(ScaledTree)
 
 # Regime
 regimes<-dat$FS[order(match(row.names(dat),PolyTree$tip.label))]
+# Create regime backbone under the parsimony function of mvSLOUCH to ensure proper format
 regimesFitch<-fitch.mvsl(PolyTree,regimes,root="B",deltran=TRUE)
 
-# Modify MP reconstruction based on SCM
+# Modify regime backbone based on the SCM reconstruction
 SCM.reg<-regimesFitch$branch_regimes
+# Modifications for character state "M"
 SCM.reg[c(4:6,49,50,66,67,75,85,96:98,103:106,111,117,121,138,154,155,159)]<-"M"
+# Modifications for character state "G"
 SCM.reg[30]<-"G"
 # Clumping M & B
 SCM.reg[SCM.reg=="M"]<-"B"
@@ -93,7 +96,6 @@ sort(OUmAIC)
 
 # Save output to file
 capture.output(estimResults,file = "OUm.txt")
-
 
 
 
