@@ -30,11 +30,11 @@ c_phylogeny_file<-"plant_tree.txt"
 b_doMLresolution_amb <- FALSE ##TRUE/FALSE if TRUE for ambiguous parsimony based regimes the regime value is taken from the simulated posterior mode, if FALSE manual resolution is done
 num_trees_regimes_simul <- 5000 ## number of simulation runs to get probability of given regime for each branch for phytools::make.simmap()
 
-num_model_repeats<- 500 ## perhaps make less for code testing
-num_bootstrap_repeats<- 500 ## perhaps make less for code testing
+num_model_repeats<- 500 
+num_bootstrap_repeats<- 500 
 
 v_statistics_to_bootstrap<-c("corr.matrix", "trait.regression", "phyl.halflife") ## statistics for which to create the bootstrap CIs
-bootci_lvl<-0.95 ## what is the size of the bootstrap CIs, here 95%
+bootci_lvl<-0.95 ## what is the significance level of the bootstrap CIs
 
 b_make_optima_plot <-TRUE ## should the plot with the optima values be made TRUE/FALSE
 b_make_phyl_regimes_plot <- TRUE ## should the phylogeny with the regimes be plotted TRUE/FALSE
