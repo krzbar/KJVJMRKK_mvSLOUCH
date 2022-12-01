@@ -32,8 +32,6 @@ num_trees_regimes_simul <- 5000 ## number of simulation runs to get probability 
 
 num_model_repeats<- 500 ## perhaps make less for code testing
 num_bootstrap_repeats<- 500 ## perhaps make less for code testing
-#num_model_repeats<- 3 ## perhaps make less for code testing
-#num_bootstrap_repeats<- 3 ## perhaps make less for code testing
 
 v_statistics_to_bootstrap<-c("corr.matrix", "trait.regression", "phyl.halflife") ## statistics for which to create the bootstrap CIs
 bootci_lvl<-0.95 ## what is the size of the bootstrap CIs, here 95%
