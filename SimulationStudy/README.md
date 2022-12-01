@@ -6,4 +6,4 @@ After the random seeds are unpacked one runs source("tosource_simulationreestima
 
 To replicate the graphs and model selection results presented in the table one needs to run source("tosource_summary.R"). The script has a number of user controlled variables at the beginning concerning file and directory naming, and which NAs and simulation setups to report the results on.
 
-In the directory SimulationRuns/01_ModelSelection/ the script OUBM1check.R can be found that generates Tab. 3 of Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje " Rotation Invariance in non–Brownian motion Phylogenetic Comparative Methods: A comment on Adams and Collyer (2018)"
+In the directory SimulationRuns/01_ModelSelection/ the script OUBM1check.R can be found that generates Tab. 3 of Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje " Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods"
