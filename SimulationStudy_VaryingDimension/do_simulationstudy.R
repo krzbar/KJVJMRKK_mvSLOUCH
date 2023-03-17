@@ -1,4 +1,4 @@
-## This file accompanies the manuscript: Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje "Rotation Invariance in non--Brownian motion Phylogenetic Comparative Methods: A comment on Adams and Collyer (2018)"
+## This file accompanies the manuscript: Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje "Analytical advances alleviate model misspecification in non--Brownian multivariate comparative methods"
 
 
 ## This software comes AS IS in the hope that it will be useful WITHOUT ANY WARRANTY, 
