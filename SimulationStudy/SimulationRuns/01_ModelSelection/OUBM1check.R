@@ -1,5 +1,5 @@
 ## This file accompanies the manuscript: 
-## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Rotation Invariance in non–Brownian motion Phylogenetic Comparative Methods: A comment on Adams and Collyer (2018)"
+## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Analytical advances alleviate model misspecification in non--Brownian multivariate comparative methods"
 ## It generates the values of Tab. 3 and should be run in the directory
 ## KJVJMRKK_mvSLOUCH/SimulationStudy/SimulationRuns/01_ModelSelection/
 ## containg the SimulationReestimation_SetupID_01_N_*.RData files
@@ -66,52 +66,52 @@ f_cfhalflives<-function(vn,sim_model,cf_model,setupid,dir_prefix=""){
     print(cf_model)
     print("average t_0.5")
     to_print<-""
-    for(i in 1:lvn){to_print<-paste0(to_print,round(mean(log(2)/(2*lalpha[[i]]),na.rm=TRUE),3),", ")}
+    for(i in 1:lvn){to_print<-paste0(to_print,round(mean(log(2)/(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("variance t_0.5")
     to_print<-""
-    for(i in 1:lvn){to_print<-paste0(to_print,round(var(log(2)/(2*lalpha[[i]]),na.rm=TRUE),3),", ")}
+    for(i in 1:lvn){to_print<-paste0(to_print,round(var(log(2)/(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("median t_0.5")
     to_print<-""
-    for(i in 1:lvn){to_print<-paste0(to_print,round(median(log(2)/(2*lalpha[[i]]),na.rm=TRUE),3),", ")}
+    for(i in 1:lvn){to_print<-paste0(to_print,round(median(log(2)/(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("lower quartile t_0.5")
     to_print<-""
-    for(i in 1:lvn){to_print<-paste0(to_print,round(quantile(log(2)/(2*lalpha[[i]]),na.rm=TRUE)[2],3),", ")}
+    for(i in 1:lvn){to_print<-paste0(to_print,round(quantile(log(2)/(lalpha[[i]]),na.rm=TRUE)[2],3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("upper quartile t_0.5")
     to_print<-""
-    for(i in 1:lvn){to_print<-paste0(to_print,round(quantile(log(2)/(2*lalpha[[i]]),na.rm=TRUE)[4],3),", ")}
+    for(i in 1:lvn){to_print<-paste0(to_print,round(quantile(log(2)/(lalpha[[i]]),na.rm=TRUE)[4],3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("% t_0.5 < 0")
     to_print<-""
-    cutoffval<-0;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(2*lalpha[[i]])<cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
+    cutoffval<-0;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(lalpha[[i]])<cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("% t_0.5 > 0.5")
     to_print<-""
-    cutoffval<-0.5;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
+    cutoffval<-0.5;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("% t_0.5 > 1")
     to_print<-""
-    cutoffval<-1;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
+    cutoffval<-1;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("% t_0.5 > 2")
     to_print<-""
-    cutoffval<-2;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
+    cutoffval<-2;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
     print("% t_0.5 > 3")
     to_print<-""
-    cutoffval<-3;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(2*lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
+    cutoffval<-3;for(i in 1:lvn){to_print<-paste0(to_print,round(100*sum(log(2)/(lalpha[[i]])>cutoffval,na.rm=TRUE)/sum(!is.na(lalpha[[i]]),na.rm=TRUE),3),", ")}
     cat(paste0(to_print,"\n"))
     print("==================================================")
 }
