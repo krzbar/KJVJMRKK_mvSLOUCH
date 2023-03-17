@@ -1,0 +1,9 @@
+In this directory one may find all the files generated (including the random seeds) in the simulation study and also R scripts used for this purpose.
+
+The user can control which parts of the simulation study to rerun by commenting out the appropriate steps (sourcing of scripts) in the script "torun.R".
+
+To replicate the results of the simulation study one needs to first in each of the folders (for i=1,2,3,4,5) 0i_ModelSelection unzip the zip archive RandomSeeds_0i_ModelSelection.zip. It is important that the directory individual_runs_results_seeds in the zip archive is placed in the directory 0i_ModelSelection . After the random seeds are unpacked one runs source("tosource_simulationreestimation.R"). In order to replicate the results the logical variable b_use_random_seed_from_manuscript (in the file usercontrolledvariables.R) has to be set to TRUE. If not, then the simulations will start from the provided by R .Random.seed. If furthermore b_should_random_seed_be_saved (in the file usercontrolledvariables.R) is TRUE then the random number generator seeds will be saved (hence a combination of FALSE and TRUE respectively will lead to overwriting whatever random number generator seeds are stored. The integer variable numcores (in the file usercontrolledvariables.R) is the number of CPU cores to be used in the parallalization.
+
+To replicate the graphs and model selection results presented in the table one needs to run source("tosource_summary.R"). In the file usercontrolledvariables.R are a number of user controlled variables concerning file and directory naming, and which NAs and simulation setups to report the results on.
+
+The  script HLccheck.R generates Tab. 4,5 of Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje " Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods"
