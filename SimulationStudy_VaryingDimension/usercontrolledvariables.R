@@ -20,6 +20,7 @@ c_simuldir_estimation<-paste0("./SimulationRuns",c_file_suffix_estimation) ## th
 c_fileprefix<-"SimulationReestimation_SetupID" ## how the file names with the simulation results begin
 c_boxplotdir<-"./BoxPlots" ## directry into which to save the boxplots
 c_file_modelcomparison<-paste0("modelcomparisons",c_file_suffix,".txt") ## text file where the model comparisons (by AICc) will be saved
+c_file_hlcheck<-paste0("cf_halflives_bmindep",c_file_suffix,".txt") ## text file where information on the summary of the half lives of models better than true BM will be saved
 estimation_directory<-paste0(c_simuldir_estimation,"/Estimation",c_file_suffix_estimation,"/")
 v_p<-c(4,8,12,16,32) ## dimensions (traits) considered
 vN<-c(32,64,128,256,512,1024,2048)
