@@ -115,7 +115,7 @@ f_cfhalflives<-function(vn,sim_model,cf_model,setupid,dir_prefix=""){
     print("==================================================")
 }
 
-sink("cf_halflives_bmindep.txt")
+sink(c_file_hlcheck)
 
 sim_model<-list(evolmodel="bm_indep")
 
