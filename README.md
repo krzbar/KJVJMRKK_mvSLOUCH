@@ -35,9 +35,13 @@ The code is divided into several directories with scripts, random seeds and resu
 
 3) SimulationStudy
 
-    Directory contains all the output of the simulation study presented in the manuscript and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs, and model comparison summary. This study was done using version 2.6.2 of mvSLOUCH. If one reruns using mvSLOUCH >= 2.7, then one will obtain different (corrected) values of R2 and an additional R2 version. 
+    Directory contains all the output of the simulation study presented in the manuscript "Model Selection Performance in Phylogenetic Comparative Methods under multivariate Ornstein–Uhlenbeck Models of Trait Evolution" and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs and model comparison summary. This study was done using version 2.6.2 of mvSLOUCH. If one reruns using mvSLOUCH >= 2.7, then one will obtain different (corrected) values of R2 and an additional R2 version. 
     
-4) Ungulates
+4) SimulationStudy_VaryingDimension
+    
+    Directory contains all the output of the simulation study presented in the manuscript "Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods" and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs and model comparison summary. This study was done using version 2.7.5 of mvSLOUCH.
+    
+5) Ungulates
 
     Directory contains files connected to the "Feeding styles and oral morphology in ungulates" analyses performed for the manuscript.
     
@@ -65,11 +69,11 @@ The code is divided into several directories with scripts, random seeds and resu
     4.4) OU1.txt, OUB.txt, OUF.txt, OUG.txt
         Outputs of the model comparison conducted under the R scripts presented above (4.3). Different files correspond to different regime setups of the feeding style variable.
         
-5) Timings
+6) Timings
 
     A simulation study to compare the running times between the old (1.3.4) and new (2.7.3) versions of mvSLOUCH.
 
-6) Ferula analyses
+8) Ferula analyses
 
     In the models_ME directory there are input and output files from the mvSLOUCH analyzes of Ferula data with measurement error included, while in the models_no_ME                directory the analyzes of data without measurement error. In each directory, one can find the following files:
 
@@ -77,7 +81,7 @@ The code is divided into several directories with scripts, random seeds and resu
 - the results for 8 analyzed models (see Fig. 2 in the main text), each in separate directory named model1, model2 and so on,
 - each model directory comprises the following files: two R scripts (for analyzes with diagonal and with upper triangular matrix Σyy; each model was run 1000 times), two csv files included information such as number of repetition (i), seed for preliminary analyzes generating starting point (seed_start_point), seed for the main analyses (seed) and AIC, AICc, SIC, BIC, R2 and loglik for each model run (these csv files are sorted according to AICc values), two directories containing results for 1000 analyzes, and two files extracted from these directories showing parameter estimation for the best models (with UpperTri and Diagonal matrix Σyy) 
 
-7) PlantFunctionalTraits 
+8) PlantFunctionalTraits 
 
       Directory contains files connected to the analyses of vascular plants performed for the manuscript. The main directory contains all the R scripts reuired to replicate the analyses (or run a new version). The Data directory contains the data for analyses, RandomSeeds the random seeds, InvidRuns the results of individual runs (starting points for the numerical optimization) of the estimation procedure, and Results the results of all of the analyses.
   
