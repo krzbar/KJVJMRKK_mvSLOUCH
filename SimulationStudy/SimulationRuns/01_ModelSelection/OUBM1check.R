@@ -1,5 +1,5 @@
 ## This file accompanies the manuscript: 
-## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Analytical advances alleviate model misspecification in non--Brownian multivariate comparative methods"
+## Bartoszek, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje "Analytical advances alleviate model misspecification in non--Brownian multivariate comparative methods"
 ## It generates the values of Tab. 3 and should be run in the directory
 ## KJVJMRKK_mvSLOUCH/SimulationStudy/SimulationRuns/01_ModelSelection/
 ## containg the SimulationReestimation_SetupID_01_N_*.RData files
