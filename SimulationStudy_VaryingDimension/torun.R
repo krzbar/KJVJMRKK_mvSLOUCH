@@ -14,6 +14,8 @@ source("tosource_for_mvSLOUCH.R")
 source(simulsetup_script)
 source("tosource_simulationreestimation.R")
 source("tosource_summary.R")
+source("HLcheck.R")
+
 
 
 
