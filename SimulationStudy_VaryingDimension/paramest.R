@@ -131,7 +131,7 @@ dir.create(c_boxplotdir,"/", showWarnings = FALSE)
 for(lmodel in lsimmodellist){
     dir.create(paste0(c_boxplotdir,"/",lmodel$modelnameforplot,"/"), showWarnings = FALSE)
     vNtmp<-vN
-    if (lmodel$id=="05"){vNtmp<-c(32,64,128)}
+    if (lmodel$id=="05"){vNtmp<-c(32,64,128,256)}
     for (n in vNtmp){
 	cfilename_lres<- paste0(c_dirpreffix,c_simuldir,"/",lmodel$id,"_ModelSelection/",c_fileprefix,"_",lmodel$id,"_N_",n,c_file_suffix,".RData")
 	lparests<-f_getres(cfilename_lres,list(lmodel$lmodelcf),TRUE)
