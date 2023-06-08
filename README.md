@@ -39,7 +39,7 @@ The code is divided into several directories with scripts, random seeds and resu
     
 4) SimulationStudy_VaryingDimension
     
-    Directory contains all the output of the simulation study presented in the manuscript "Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods" and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs and model comparison summary. This study was done using version 2.7.5 of mvSLOUCH.
+    Directory contains all the output of the simulation study presented in the manuscript "Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods" and scripts that allow for replication (the random number generator seeds are also provided) or running ones own simulation study, and scripts to generate graphs and model comparison summary. This study was done using versions 2.7.3, and 2.7.5 of mvSLOUCH.
     
 5) Ungulates
 
