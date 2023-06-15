@@ -11,7 +11,7 @@
 # ~~~~~~~~~~~~~~~~~~ Plot mPsi with regression CIs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 DFs1 <- data.frame(
   Ecology=factor(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)),
-  Trait= rep( "plant height(m)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
+  Trait= rep( "Plant height (m)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
   Estimated.Point=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point["plant.height",],
   upper=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end["plant.height",],
   lower=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end["plant.height",]
@@ -19,7 +19,7 @@ DFs1 <- data.frame(
 
 DFs2 <- data.frame(
   Ecology=factor(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)),
-  Trait= rep( "seed mass(mg)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
+  Trait= rep( "Seed mass (mg)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
   Estimated.Point=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point["seed.mass",],
   upper=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end["seed.mass",],
   lower=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end["seed.mass",]
@@ -27,7 +27,7 @@ DFs2 <- data.frame(
 
 DFs3 <- data.frame(
   Ecology=factor(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)),
-  Trait= rep( "leaf area(mm2)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
+  Trait= rep( "Leaf area (mm2)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
   Estimated.Point=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point["leaf.area",],
   upper=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end["leaf.area",],
   lower=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end["leaf.area",]
@@ -35,7 +35,7 @@ DFs3 <- data.frame(
 
 DFs4 <- data.frame(
   Ecology=factor(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)),
-  Trait= rep( "leaf mass(mg)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
+  Trait= rep( "Leaf mass (mg)", length(colnames(best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point)) ),
   Estimated.Point=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Estimated.Point["leaf.mass",],
   upper=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Upper.end["leaf.mass",],
   lower=best_model$best_output$ParamSummary$confidence.interval$regression.summary$mPsi.regression.confidence.interval$Lower.end["leaf.mass",]
