@@ -156,6 +156,9 @@ aicc<-function(aic,k,N) aic+((2*k*(k+1))/(N-k-1))
     regimes_Ellenberg<-regimes_FitchML
 ## =========================== end of ML regimes creation ==============================================
 }else{
+    ## Manual resolution of ambiguous regime assignments to branches		
+    ## based on (visual, manual) local minimilization of the number 
+    ## of changes in the subpart of the tree, where DELTRAN results in ambiguous assignments	
     if (root_regime=="ambiguous"){
         root_regime<- names(table(regimes_EllenbergFitch))[which.max(table(regimes_EllenbergFitch))]
     }
