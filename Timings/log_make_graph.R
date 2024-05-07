@@ -8,6 +8,9 @@
 ## that may befall you or others as a result of its use. Please send comments and report 
 ## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
 
+## The code here generates the output for 
+## Appendix SG: mvSLOUCH timings
+
 ## User controlled variables ===========================================================================
 filename_suffix<-"" ## initial _ has to be here
 filename_prefix<-"mvSLOUCH_newold_timings"
