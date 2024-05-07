@@ -8,6 +8,8 @@
 ## that may befall you or others as a result of its use. Please send comments and report 
 ## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
 
+## The code here generates the output for 
+## Appendix SG: mvSLOUCH timings
 
 library(mvSLOUCH) ## v 2.7.3
 library(mvSLOUCHold) ## v 1.3.4, needs to be installed manually
