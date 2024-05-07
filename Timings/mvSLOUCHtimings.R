@@ -8,6 +8,8 @@
 ## that may befall you or others as a result of its use. Please send comments and report 
 ## bugs to Krzysztof Bartoszek at krzbar@protonmail.ch .
 
+## The code here generates the output for 
+## Appendix SG: mvSLOUCH timings
 
 library(parallel)
 source("tosource_for_mvSLOUCH.R")
