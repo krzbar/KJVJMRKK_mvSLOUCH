@@ -1,4 +1,4 @@
-These are the R scripts and numerical results accompanying Bartoszek, Clarke, Fuentes Gonzalez, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje "Model Selection Performance in Phylogenetic Comparative Methods under multivariate Ornstein–Uhlenbeck Models of Trait Evolution", "Fast mvSLOUCH: multivariate Ornstein–Uhlenbeck-based models of trait evolution on large phylogenies", and "Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods".
+These are the R scripts and numerical results accompanying Bartoszek, Clarke, Fuentes-González, Mitov, Pienaar, Piwczyński, Puchałka, Spalik and Voje "Model Selection Performance in Phylogenetic Comparative Methods under multivariate Ornstein–Uhlenbeck Models of Trait Evolution", "Fast mvSLOUCH: multivariate Ornstein–Uhlenbeck-based models of trait evolution on large phylogenies", and "Analytical advances alleviate model misspecification in non-Brownian multivariate comparative methods".
 
 The R setup for the manuscript was as follows: R version 3.6.1 (2019-09-12) Platform: x86_64-pc-linux-gnu (64-bit) Running under: openSUSE Leap 42.3
 
