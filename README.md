@@ -81,11 +81,11 @@ The code is divided into several directories with scripts, random seeds and resu
 - the results for 8 analyzed models (see Fig. 2 in the main text), each in separate directory named model1, model2 and so on,
 - each model directory comprises the following files: two R scripts (for analyzes with diagonal and with upper triangular matrix Σyy; each model was run 1000 times), two csv files included information such as number of repetition (i), seed for preliminary analyzes generating starting point (seed_start_point), seed for the main analyses (seed) and AIC, AICc, SIC, BIC, R2 and loglik for each model run (these csv files are sorted according to AICc values), two directories containing results for 1000 analyzes, and two files extracted from these directories showing parameter estimation for the best models (with UpperTri and Diagonal matrix Σyy) 
 
-8) PlantFunctionalTraits 
+9) PlantFunctionalTraits 
 
       Directory contains files connected to the analyses of vascular plants performed for the manuscript. The main directory contains all the R scripts reuired to replicate the analyses (or run a new version). The Data directory contains the data for analyses, RandomSeeds the random seeds, InvidRuns the results of individual runs (starting points for the numerical optimization) of the estimation procedure, and Results the results of all of the analyses.
 
-   9) PhasePlanesmvOU
+10) PhasePlanesmvOU
 
       R code to generate Figures 1 and S1 of Bartoszek, Clarke, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Fast mvSLOUCH: multivariate Ornstein–Uhlenbeck-based models of trait evolution on large phylogenies"
 
