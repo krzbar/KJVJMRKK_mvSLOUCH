@@ -84,4 +84,10 @@ The code is divided into several directories with scripts, random seeds and resu
 8) PlantFunctionalTraits 
 
       Directory contains files connected to the analyses of vascular plants performed for the manuscript. The main directory contains all the R scripts reuired to replicate the analyses (or run a new version). The Data directory contains the data for analyses, RandomSeeds the random seeds, InvidRuns the results of individual runs (starting points for the numerical optimization) of the estimation procedure, and Results the results of all of the analyses.
+
+   9) PhasePlanesmvOU
+
+      R code to generate Figures 1 and S1 of Bartoszek, Clarke, Fuentes Gonzalez, Mitov, Pienaar, Piwczynski, Puchalka, Spalik and Voje " Fast mvSLOUCH: multivariate Ornstein–Uhlenbeck-based models of trait evolution on large phylogenies"
+
+      
   
